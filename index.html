@@ -7,16 +7,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0b1020;color:#e5e7eb;line-height:1.7}
+body{background:#0b1020;color:#e5e7eb;line-height:1.7;scroll-behavior:smooth}
 a{color:#facc15;text-decoration:none}
 
 /* NAVBAR */
 .navbar{position:fixed;top:0;width:100%;background:rgba(2,6,23,.9);backdrop-filter:blur(10px);border-bottom:1px solid #1f2937;z-index:1000}
-.nav-container{max-width:1200px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.logo{font-weight:700;color:#facc15}
-.nav-links{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
+.nav-container{max-width:1200px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;color:#facc15;font-size:1.1rem}
+
+.nav-links{list-style:none;display:flex;gap:22px}
 .nav-links a{color:#e5e7eb;font-size:.95rem}
 .nav-links a:hover{color:#facc15}
+
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:26px;height:3px;background:#facc15;border-radius:3px;transition:.3s}
+
+/* HAMBURGER ANIMATION */
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(6px,-6px)}
 
 /* HERO */
 header{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 40px;background:radial-gradient(circle at top,#111827,#020617)}
@@ -47,7 +57,7 @@ h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:50px;text-align:center}
 .card:hover{transform:translateY(-6px);box-shadow:0 0 22px rgba(250,204,21,.25);border-color:#facc15}
 .year{font-size:.85rem;color:#94a3b8;margin-bottom:10px}
 
-/* PROJECTS & CERTIFICATIONS */
+/* PROJECTS */
 .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
 .project{background:#020617;padding:25px;border-radius:16px;border:1px solid #1f2937;transition:.3s}
 .project:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 0 25px rgba(250,204,21,.25);border-color:#facc15}
@@ -64,12 +74,15 @@ h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:50px;text-align:center}
 
 footer{text-align:center;padding:40px 20px;background:#020617;color:#94a3b8}
 
-/* MOBILE FIXES */
+/* MOBILE MENU */
 @media(max-width:768px){
+.hamburger{display:flex}
+.nav-links{position:absolute;top:64px;right:0;width:100%;flex-direction:column;align-items:center;background:#020617;border-top:1px solid #1f2937;display:none}
+.nav-links.active{display:flex}
+.nav-links li{padding:14px 0}
 .timeline:before{left:20px}
 .entry{width:100%;left:0!important;padding-left:60px;text-align:left}
 .entry:before{left:14px!important}
-.nav-links{justify-content:center;width:100%}
 }
 </style>
 </head>
@@ -78,13 +91,18 @@ footer{text-align:center;padding:40px 20px;background:#020617;color:#94a3b8}
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo">Shubham</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Work Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#skills">Skills</a></li>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="toggleMenu()">About</a></li>
+      <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+      <li><a href="#experience" onclick="toggleMenu()">Work Experience</a></li>
+      <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+      <li><a href="#certifications" onclick="toggleMenu()">Certifications</a></li>
+      <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
     </ul>
   </div>
 </nav>
@@ -202,17 +220,33 @@ footer{text-align:center;padding:40px 20px;background:#020617;color:#94a3b8}
 
 <section id="contact">
   <h2>Contact Me</h2>
-  <form class="contact-form" action="mailto:researcher.shubham@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button class="btn" type="submit">Send Enquiry</button>
-  </form>
+  <p style="text-align:center;max-width:700px;margin:0 auto 40px;color:#cbd5f5">
+    Interested in internships, jobs, research collaboration, or lab work opportunities?
+    You can contact me directly using the options below.
+  </p>
+
+  <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center">
+    <a class="btn" href="https://wa.me/919876543210?text=Hello%20Shubham,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank">
+      WhatsApp Enquiry
+    </a>
+
+    <a class="btn" href="mailto:researcher.shubham@gmail.com?subject=Portfolio%20Enquiry&body=Hello%20Shubham,%0A%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity.%0A">
+      Email Me
+    </a>
+  </div>
 </section>
 
 <footer>
   <p>© 2026 Shubham Maddhesiya</p>
 </footer>
 
+<script>
+function toggleMenu(){
+  const nav=document.getElementById('navLinks');
+  const burger=document.querySelector('.hamburger');
+  nav.classList.toggle('active');
+  burger.classList.toggle('active');
+}
+</script>
 </body>
 </html>
