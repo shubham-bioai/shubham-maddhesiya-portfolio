@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shubham Maddhesiya | Biotechnology Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0b1020;color:#e5e7eb;line-height:1.7}
+a{color:#facc15;text-decoration:none}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;width:100%;background:rgba(2,6,23,.9);backdrop-filter:blur(10px);border-bottom:1px solid #1f2937;z-index:1000}
+.nav-container{max-width:1200px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-weight:700;color:#facc15}
+.nav-links{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
+.nav-links a{color:#e5e7eb;font-size:.95rem}
+.nav-links a:hover{color:#facc15}
+
+/* HERO */
+header{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 40px;background:radial-gradient(circle at top,#111827,#020617)}
+header h1{font-size:clamp(2rem,5vw,3rem)}
+header p{margin-top:15px;font-size:clamp(1rem,2.5vw,1.15rem);color:#cbd5f5}
+.hero-btns{margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center}
+.btn{margin:8px;padding:12px 28px;border-radius:30px;font-weight:600;background:#facc15;color:#020617;transition:.3s}
+.btn:hover{box-shadow:0 0 25px rgba(250,204,21,.6);transform:translateY(-3px)}
+
+section{padding:80px 8%}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:50px;text-align:center}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:25px}
+.stat{background:#020617;padding:25px;border-radius:14px;border:1px solid #1f2937;text-align:center}
+.stat h3{font-size:2rem;color:#facc15}
+
+/* TIMELINE */
+.timeline{max-width:900px;margin:auto;position:relative}
+.timeline:before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:#facc15;transform:translateX(-50%)}
+.entry{width:50%;padding:20px 40px;position:relative}
+.entry:nth-child(odd){left:0;text-align:right}
+.entry:nth-child(even){left:50%}
+.entry:before{content:'';position:absolute;top:30px;width:14px;height:14px;background:#facc15;border-radius:50%}
+.entry:nth-child(odd):before{right:-7px}
+.entry:nth-child(even):before{left:-7px}
+.card{background:#020617;padding:25px;border-radius:14px;border:1px solid #1f2937;transition:.4s}
+.card:hover{transform:translateY(-6px);box-shadow:0 0 22px rgba(250,204,21,.25);border-color:#facc15}
+.year{font-size:.85rem;color:#94a3b8;margin-bottom:10px}
+
+/* PROJECTS & CERTIFICATIONS */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.project{background:#020617;padding:25px;border-radius:16px;border:1px solid #1f2937;transition:.3s}
+.project:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 0 25px rgba(250,204,21,.25);border-color:#facc15}
+.project h4{color:#facc15;margin-bottom:10px}
+
+/* SKILLS */
+.skills{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.skill{padding:10px 18px;border-radius:20px;background:#020617;border:1px solid #1f2937;color:#cbd5f5;transition:.3s}
+.skill:hover{background:#facc15;color:#020617;box-shadow:0 0 18px rgba(250,204,21,.4)}
+
+/* CONTACT */
+.contact-form{max-width:600px;margin:auto}
+.contact-form input,.contact-form textarea{width:100%;padding:14px;margin-bottom:15px;background:#020617;border:1px solid #1f2937;color:#e5e7eb;border-radius:10px}
+
+footer{text-align:center;padding:40px 20px;background:#020617;color:#94a3b8}
+
+/* MOBILE FIXES */
+@media(max-width:768px){
+.timeline:before{left:20px}
+.entry{width:100%;left:0!important;padding-left:60px;text-align:left}
+.entry:before{left:14px!important}
+.nav-links{justify-content:center;width:100%}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Shubham</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Work Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="about">
+  <div>
+    <h1>Shubham Maddhesiya</h1>
+    <p>Biotechnology Graduate | Microbiology & Wet Lab Specialist<br>Aspiring Laboratory Technician & Research Intern</p>
+    <div class="hero-btns">
+      <a class="btn" href="#contact">Contact</a>
+      <a class="btn" href="Shubham_Resume.pdf" download>Download CV</a>
+    </div>
+  </div>
+</header>
+
+<section id="education">
+  <h2>Education Snapshot</h2>
+  <div class="stats">
+    <div class="stat"><h3>15+</h3><p>Microbiology Experiments</p></div>
+    <div class="stat"><h3>1+</h3><p>Year Lab Experience</p></div>
+    <div class="stat"><h3>3+</h3><p>Major Projects</p></div>
+    <div class="stat"><h3>1</h3><p>Industrial Internship</p></div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Work Experience</h2>
+  <div class="timeline">
+    <div class="entry">
+      <div class="card">
+        <h3>Antimicrobial Activity of Copper</h3>
+        <div class="year">2024 – 2025 | Academic Research Project</div>
+        <p>Conducted experimental research on antimicrobial properties of copper against bacteria and fungi. Performed Kirby–Bauer antibiotic sensitivity testing, media preparation, microbial culturing, zone of inhibition analysis, and followed GLP & biosafety protocols.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="card">
+        <h3>University Microbiology Laboratory Training</h3>
+        <div class="year">Jul 2023 – Aug 2024</div>
+        <p>Hands-on training in microbiology labs including aseptic techniques, sterilization, microbial growth studies, lab documentation, inventory handling, and assisting faculty during undergraduate practical sessions.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="card">
+        <h3>Industrial Internship – India Glycols Limited</h3>
+        <div class="year">Jun 2024 – Jul 2024</div>
+        <p>Industrial exposure to fermentation processes, ethanol production, distillation units, and quality control operations in a large-scale biofuel and biotechnology production environment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h4>Antimicrobial Copper Study</h4>
+      <p>Evaluated antimicrobial efficacy of copper against microorganisms using standard microbiological assays.</p>
+    </div>
+    <div class="project">
+      <h4>Antibiotic Sensitivity Testing</h4>
+      <p>Performed Kirby–Bauer tests, zone measurement, and result interpretation under controlled lab conditions.</p>
+    </div>
+    <div class="project">
+      <h4>Fermentation & Ethanol Production</h4>
+      <p>Hands-on exposure to fermentation workflows, distillation, and industrial QC practices.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span class="skill">Microbial Culturing</span>
+    <span class="skill">Media Preparation</span>
+    <span class="skill">Aseptic Techniques</span>
+    <span class="skill">Sterilization Methods</span>
+    <span class="skill">Kirby–Bauer Antibiotic Sensitivity Test</span>
+    <span class="skill">Zone of Inhibition Analysis</span>
+    <span class="skill">Bacterial & Fungal Identification</span>
+    <span class="skill">Fermentation Technology</span>
+    <span class="skill">Ethanol Production Process</span>
+    <span class="skill">Quality Control (QC)</span>
+    <span class="skill">Good Laboratory Practices (GLP)</span>
+    <span class="skill">Biosafety & Waste Management</span>
+    <span class="skill">Laboratory Documentation</span>
+    <span class="skill">Equipment Handling & Calibration</span>
+    <span class="skill">Basic Bioinformatics (Python)</span>
+  </div>
+</section>
+
+<section id="certifications">
+  <h2>Certifications & Achievements</h2>
+  <div class="projects">
+    <div class="project">
+      <h4>Industrial Biotechnology & Fermentation Training</h4>
+      <p>Certified hands-on industrial exposure in fermentation technology, ethanol production, and quality control processes during internship at India Glycols Limited.</p>
+    </div>
+    <div class="project">
+      <h4>Microbiology Laboratory Techniques</h4>
+      <p>Certification covering aseptic techniques, microbial culturing, media preparation, sterilization, and biosafety practices aligned with GLP standards.</p>
+    </div>
+    <div class="project">
+      <h4>Antimicrobial Testing & AST Methods</h4>
+      <p>Certified training in Kirby–Bauer antibiotic sensitivity testing, zone of inhibition analysis, and interpretation of microbiological results.</p>
+    </div>
+    <div class="project">
+      <h4>Basic Bioinformatics & Data Handling</h4>
+      <p>Introductory certification in bioinformatics concepts, biological data handling, and basic Python usage for life sciences.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form class="contact-form" action="mailto:researcher.shubham@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button class="btn" type="submit">Send Enquiry</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Shubham Maddhesiya</p>
+</footer>
+
+</body>
+</html>
