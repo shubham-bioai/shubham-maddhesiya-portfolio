@@ -7,7 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0b1020;color:#e5e7eb;line-height:1.7;scroll-behavior:smooth}
+html{overflow-x:hidden}
+body{background:#0b1020;color:#e5e7eb;line-height:1.7;scroll-behavior:smooth;overflow-x:hidden;width:100%}
+img{max-width:100%;display:block}
 a{color:#facc15;text-decoration:none}
 
 /* NAVBAR */
@@ -15,8 +17,8 @@ a{color:#facc15;text-decoration:none}
 .nav-container{max-width:1200px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-weight:700;color:#facc15;font-size:1.1rem}
 
-.nav-links{list-style:none;display:flex;gap:22px}
-.nav-links a{color:#e5e7eb;font-size:.95rem}
+.nav-links{list-style:none;display:flex;gap:20px;flex-wrap:wrap}
+.nav-links a{color:#e5e7eb;font-size:.92rem}
 .nav-links a:hover{color:#facc15}
 
 /* HAMBURGER */
@@ -31,33 +33,38 @@ a{color:#facc15;text-decoration:none}
 /* HERO */
 header{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px 40px;background:radial-gradient(circle at top,#111827,#020617)}
 header h1{font-size:clamp(2rem,5vw,3rem)}
-.hero-logo{display:flex;justify-content:center;margin-bottom:14px}
-.hero-logo span{width:64px;height:64px;border-radius:50%;background:#facc15;color:#020617;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.4rem;box-shadow:0 0 25px rgba(250,204,21,.45)}
-header p{margin-top:15px;font-size:clamp(1rem,2.5vw,1.15rem);color:#cbd5f5}
+.hero-logo{display:flex;justify-content:center;margin-bottom:18px}
+.hero-logo img{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid #facc15;box-shadow:0 0 30px rgba(250,204,21,.45)}
+header p{margin-top:15px;font-size:clamp(1rem,2.5vw,1.15rem);color:#cbd5f5;max-width:760px}
 .hero-btns{margin-top:30px;display:flex;flex-wrap:wrap;justify-content:center}
-.btn{margin:8px;padding:12px 28px;border-radius:30px;font-weight:600;background:#facc15;color:#020617;transition:.3s}
+.btn{margin:8px;padding:12px 28px;border-radius:30px;font-weight:600;background:#facc15;color:#020617;transition:.3s;border:none;cursor:pointer;font-family:inherit;font-size:1rem;display:inline-flex;align-items:center;gap:9px}
 .btn:hover{box-shadow:0 0 25px rgba(250,204,21,.6);transform:translateY(-3px)}
+.btn-outline{background:transparent;color:#facc15;border:1px solid #facc15}
+.btn svg{flex-shrink:0}
 
 section{padding:80px 8%}
-h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:50px;text-align:center}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:12px;text-align:center}
+.section-sub{text-align:center;color:#94a3b8;max-width:640px;margin:0 auto 50px;font-size:.95rem}
 
 /* STATS */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:25px}
-.stat{background:#020617;padding:25px;border-radius:14px;border:1px solid #1f2937;text-align:center}
+.stat{background:#020617;padding:25px;border-radius:14px;border:1px solid #1f2937;text-align:center;transition:.3s}
+.stat:hover{border-color:#facc15;transform:translateY(-4px)}
 .stat h3{font-size:2rem;color:#facc15}
 
-/* TIMELINE */
+/* TIMELINE (shared by Education Journey + Work Experience) */
 .timeline{max-width:900px;margin:auto;position:relative}
 .timeline:before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:#facc15;transform:translateX(-50%)}
 .entry{width:50%;padding:20px 40px;position:relative}
 .entry:nth-child(odd){left:0;text-align:right}
 .entry:nth-child(even){left:50%}
-.entry:before{content:'';position:absolute;top:30px;width:14px;height:14px;background:#facc15;border-radius:50%}
+.entry:before{content:'';position:absolute;top:30px;width:14px;height:14px;background:#facc15;border-radius:50%;box-shadow:0 0 0 4px rgba(250,204,21,.18)}
 .entry:nth-child(odd):before{right:-7px}
 .entry:nth-child(even):before{left:-7px}
 .card{background:#020617;padding:25px;border-radius:14px;border:1px solid #1f2937;transition:.4s}
 .card:hover{transform:translateY(-6px);box-shadow:0 0 22px rgba(250,204,21,.25);border-color:#facc15}
 .year{font-size:.85rem;color:#94a3b8;margin-bottom:10px}
+.badge{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:600;background:rgba(250,204,21,.12);color:#facc15;border:1px solid rgba(250,204,21,.4)}
 
 /* PROJECTS */
 .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
@@ -91,24 +98,65 @@ h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:50px;text-align:center}
 .skill{padding:10px 18px;border-radius:20px;background:#020617;border:1px solid #1f2937;color:#cbd5f5;transition:.3s}
 .skill:hover{background:#facc15;color:#020617;box-shadow:0 0 18px rgba(250,204,21,.4)}
 
+/* BACK TO TOP */
+.top-btn{position:fixed;bottom:24px;right:24px;width:46px;height:46px;border-radius:50%;background:#facc15;color:#020617;display:flex;align-items:center;justify-content:center;font-weight:700;opacity:0;pointer-events:none;transition:.3s;z-index:999;border:none;cursor:pointer}
+.top-btn.show{opacity:1;pointer-events:auto}
+
+section,header{scroll-margin-top:80px}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+
+/* NAV-TARGET PULSE (confirms a nav click landed on the right section) */
+@keyframes pulseGlow{0%{text-shadow:0 0 0 rgba(250,204,21,0)}45%{text-shadow:0 0 22px rgba(250,204,21,.85)}100%{text-shadow:0 0 0 rgba(250,204,21,0)}}
+.nav-target-pulse{animation:pulseGlow 1s ease}
+
 /* CONTACT */
-.social-icons{display:flex;justify-content:center;gap:28px;margin-top:10px}
-.social-icons a{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#020617;border:1px solid #facc15;transition:.3s}
-.social-icons img{width:26px;height:26px;filter:invert(77%) sepia(52%) saturate(431%) hue-rotate(3deg) brightness(102%) contrast(101%);transition:.3s}
-.social-icons a:hover{background:#facc15;box-shadow:0 0 18px rgba(250,204,21,.5)}
-.social-icons a:hover img{filter:invert(9%) sepia(10%) saturate(400%) hue-rotate(180deg) brightness(95%) contrast(95%)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;max-width:900px;margin:0 auto}
+.contact-card{display:flex;align-items:center;gap:16px;background:#020617;border:1px solid #1f2937;border-radius:14px;padding:20px;transition:.3s}
+.contact-card:hover{border-color:#facc15;transform:translateY(-5px);box-shadow:0 0 22px rgba(250,204,21,.22)}
+.contact-icon{width:48px;height:48px;border-radius:50%;background:rgba(250,204,21,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-icon img{width:22px;height:22px;filter:invert(77%) sepia(52%) saturate(431%) hue-rotate(3deg) brightness(102%) contrast(101%)}
+.contact-text{min-width:0}
+.contact-label{display:block;font-size:.72rem;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.contact-value{display:block;font-size:.95rem;font-weight:600;color:#e5e7eb;word-break:break-word;transition:.3s}
+.contact-card:hover .contact-value{color:#facc15}
 
 footer{text-align:center;padding:40px 20px;background:#020617;color:#94a3b8}
 
-/* MOBILE MENU */
-@media(max-width:768px){
+/* TABLET & MOBILE MENU */
+@media(max-width:860px){
 .hamburger{display:flex}
-.nav-links{position:absolute;top:64px;right:0;width:100%;flex-direction:column;align-items:center;background:#020617;border-top:1px solid #1f2937;display:none}
+.nav-links{position:absolute;top:64px;right:0;width:100%;max-height:calc(100vh - 64px);overflow-y:auto;flex-direction:column;align-items:center;background:#020617;border-top:1px solid #1f2937;display:none}
 .nav-links.active{display:flex}
 .nav-links li{padding:14px 0}
 .timeline:before{left:20px}
 .entry{width:100%;left:0!important;padding-left:60px;text-align:left}
 .entry:before{left:14px!important}
+}
+
+/* SMALL PHONES */
+@media(max-width:480px){
+header{padding:110px 16px 40px}
+.hero-logo img{width:110px;height:110px}
+section{padding:56px 6%}
+h2{margin-bottom:8px}
+.section-sub{margin-bottom:34px;font-size:.88rem}
+.entry{padding-left:46px;padding-right:10px}
+.entry:before{left:10px!important}
+.stat,.card,.project{padding:20px 18px}
+.stats,.projects{grid-template-columns:1fr}
+.hero-btns .btn{padding:11px 22px;font-size:.92rem}
+.social-icons{gap:18px}
+.contact-card{padding:16px}
+.top-btn{width:40px;height:40px;bottom:16px;right:16px}
+}
+
+/* LARGE SCREENS */
+@media(min-width:1400px){
+section{padding:90px 12%}
+.timeline{max-width:1000px}
 }
 </style>
 </head>
@@ -124,11 +172,12 @@ footer{text-align:center;padding:40px 20px;background:#020617;color:#94a3b8}
     </div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" onclick="toggleMenu()">About</a></li>
-      <li><a href="#education" onclick="toggleMenu()">Education</a></li>
-      <li><a href="#experience" onclick="toggleMenu()">Work Experience</a></li>
-      <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-      <li><a href="#certifications" onclick="toggleMenu()">Certifications</a></li>
+      <li><a href="#education-journey" onclick="toggleMenu()">Education</a></li>
+      <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+      <li><a href="#projects" onclick="toggleMenu()">Research Projects</a></li>
+      <li><a href="#publications" onclick="toggleMenu()">Publications</a></li>
       <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -136,18 +185,86 @@ footer{text-align:center;padding:40px 20px;background:#020617;color:#94a3b8}
 <header id="about">
   <div>
     <div class="hero-logo">
-      <span>SM</span>
+      <img src="shubham.jpg" alt="Shubham Maddhesiya" />
     </div>
     <h1>Shubham Maddhesiya</h1>
-    <p>Completed my Bachelor’s degree in Biotechnology in 2025 and bring 1+ year of combined academic, laboratory, and industrial training experience. My background includes 6+ months of hands-on laboratory research, where I worked on a project investigating the antimicrobial activity of copper and followed Good Laboratory Practices (GLP) in routine experimental workflows.
-
-I also completed a 1-month industrial internship at India Glycols Limited. I am currently transitioning into bioinformatics, building skills in Python, biological data analysis, and machine learning, with the goal of integrating experimental biology knowledge with computational approaches for genomics and data-driven life science research.</p>
+    <p>Biotechnology graduate (2025) with hands-on laboratory research and industrial training experience, currently pursuing an M.Sc in Biotechnology at Central University of Jammu. My long-term goal is to build a career in academia as an Assistant Professor — combining research in microbiology and computational biology with a genuine commitment to mentoring the next generation of life science students.</p>
     <div class="hero-btns">
-      <a class="btn" href="#contact">Contact</a>
-      <a class="btn" href="Shubham_Resume.pdf" download>Download CV</a>
+      <a class="btn" href="#contact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Contact
+      </a>
+      <a class="btn btn-outline" href="Shubham_Maddhesiya_Academic_CV.docx" download>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
+      </a>
     </div>
   </div>
 </header>
+
+<section id="education-journey">
+  <h2>Education Journey</h2>
+  <p class="section-sub">A timeline of my academic path in Biotechnology, from undergraduate studies to postgraduate specialization.</p>
+  <div class="timeline">
+
+    <div class="entry">
+      <div class="card">
+        <h3>M.Sc — Biotechnology</h3>
+        <div class="year">2026 – 2028 | Central University of Jammu</div>
+        <p>Pursuing my Master's degree in Biotechnology, deepening my expertise in advanced biological sciences while building on my growing interest in bioinformatics and computational biology.</p>
+        <span class="badge">Ongoing</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="card">
+        <h3>B.Sc — Biotechnology</h3>
+        <div class="year">2022 – 2025 | Mahayogi Gorakhnath University, Gorakhpur</div>
+        <p>Completed my Bachelor's degree in Biotechnology, gaining a strong foundation in microbiology, molecular biology, and laboratory research through coursework and hands-on projects.</p>
+        <span class="badge">Completed</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="research-interests">
+  <h2>Research Interests</h2>
+  <p class="section-sub">Exploring the intersection of experimental microbiology and computational biology to address real-world challenges in health and disease. Research profile: <a href="https://orcid.org/0009-0007-7540-5044" target="_blank">ORCID 0009-0007-7540-5044</a></p>
+  <div class="skills">
+    <span class="skill">Antimicrobial Resistance &amp; Antimicrobial Agents</span>
+    <span class="skill">Microbiology &amp; Fermentation Technology</span>
+    <span class="skill">Bioinformatics &amp; Genomic Data Analysis</span>
+    <span class="skill">Computational &amp; AI-driven Biology</span>
+  </div>
+</section>
+
+<section id="mentoring">
+  <h2>Mentoring &amp; Community</h2>
+  <p class="section-sub">Mentoring 50+ undergraduate students in Biotechnology through one-on-one guidance and an active LinkedIn presence, helping them navigate coursework, research directions, and career choices in the life sciences. Recognized as one of the most active voices in my network, with 1,000+ LinkedIn followers.</p>
+  <div class="stats">
+    <div class="stat"><h3>50+</h3><p>Students Mentored</p></div>
+    <div class="stat"><h3>1,000+</h3><p>LinkedIn Followers</p></div>
+    <div class="stat"><h3>1:1</h3><p>Personal Guidance</p></div>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Publications &amp; Presentations</h2>
+  <p class="section-sub">Building a research record alongside my M.Sc — this section will grow as work moves from the lab bench to peer-reviewed and conference outputs.</p>
+  <div class="projects">
+    <div class="project">
+      <h4>Antimicrobial Activity of Copper on Microorganisms</h4>
+      <p>Undergraduate research project on the antimicrobial mechanism of copper; findings are being prepared for submission as a paper/poster.</p>
+      <span class="badge">In Progress</span>
+    </div>
+    <div class="project">
+      <h4>M.Sc Research Output</h4>
+      <p>Forthcoming publications and conference presentations arising from my M.Sc research at Central University of Jammu will be listed here.</p>
+      <span class="badge">Forthcoming</span>
+    </div>
+  </div>
+</section>
 
 <section id="education">
   <h2>Education Snapshot</h2>
@@ -165,32 +282,32 @@ I also completed a 1-month industrial internship at India Glycols Limited. I am 
     <div class="entry">
       <div class="card">
         <h3>Social Media Intern</h3>
-        <div class="year"> Jan 2026 – Jan 2026 | RealThreadX </div>
-        <p>Working as a intern at RealThreadX, I am learning real startup and practical skills.</p>
+        <div class="year">Jan 2026 – Jan 2026 | RealThreadX</div>
+        <p>Working as an intern at RealThreadX, learning real startup and practical skills.</p>
       </div>
     </div>
 
     <div class="entry">
       <div class="card">
         <h3>Trainee</h3>
-        <div class="year">Jan 2025 – Jun 2025 | Mahayogi Gorakhnath University Gorakhpur </div>
-        <p>A part of my Biotech study i will start a mini project on "Antimicrobial activity on Copper", affecting that microorganisms.</p>
+        <div class="year">Jan 2025 – Jun 2025 | Mahayogi Gorakhnath University Gorakhpur</div>
+        <p>As part of my Biotech study, I worked on a mini project on "Antimicrobial Activity of Copper," studying its effects on microorganisms.</p>
       </div>
     </div>
 
-        <div class="entry">
+    <div class="entry">
       <div class="card">
         <h3>Good Laboratory Practices</h3>
-        <div class="year">Jul 2023 – Aug 2024 | Mahayogi Gorakhnath University Gorakhpur </div>
+        <div class="year">Jul 2023 – Aug 2024 | Mahayogi Gorakhnath University Gorakhpur</div>
         <p>Microbial Culture Techniques, Bacterial Culture, Analytical Skills, Research Skills.</p>
       </div>
     </div>
 
-        <div class="entry">
+    <div class="entry">
       <div class="card">
         <h3>Own Project Work</h3>
         <div class="year">Jun 2023 – Sep 2023 | Mahayogi Gorakhnath University Gorakhpur</div>
-        <p>Completing my own project under-supervisssion of professor- Antibiotic Sensitivity Testing, Media preparation, Culturing.</p>
+        <p>Completed my own project under the supervision of a professor — Antibiotic Sensitivity Testing, Media Preparation, Culturing.</p>
       </div>
     </div>
 
@@ -205,7 +322,7 @@ I also completed a 1-month industrial internship at India Glycols Limited. I am 
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
+  <h2>Research Projects</h2>
   <div class="projects">
 
     <div class="project">
@@ -213,7 +330,7 @@ I also completed a 1-month industrial internship at India Glycols Limited. I am 
         <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/box-arrow-up-right.svg" alt="Project Link" />
       </a>
       <h4>Antimicrobial Copper Study</h4>
-      <p>Conducted Literature Review on the Effects of Copper, and the Mechanism Behind its Antimicrobial Properties</p>
+      <p>Investigated the mechanism behind copper's antimicrobial properties through a structured literature review, examining how the metal disrupts microbial cell function.</p>
     </div>
 
     <div class="project">
@@ -221,7 +338,7 @@ I also completed a 1-month industrial internship at India Glycols Limited. I am 
         <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/box-arrow-up-right.svg" alt="Project Link" />
       </a>
       <h4>Biological Database Search Engine</h4>
-      <p>This tool allows a user to input a human gene name and automatically fetches relevant gene and protein information from trusted biological databases. The fetched data is then presented in a simple, student-friendly format..</p>
+      <p>Designed a tool that retrieves gene and protein data from trusted biological databases given a human gene name, presenting the results in a clear, student-friendly format for teaching and self-study use.</p>
     </div>
 
     <div class="project">
@@ -229,7 +346,7 @@ I also completed a 1-month industrial internship at India Glycols Limited. I am 
         <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/box-arrow-up-right.svg" alt="Project Link" />
       </a>
       <h4>AI-Based Bone Fracture Detection using Medical Imaging</h4>
-      <p>An AI-powered bone fracture detection system that analyzes X-ray images, predicts fracture presence with confidence scores, generates downloadable medical-style PDF reports, and delivers a clean, patient-friendly web interface using deep learning and Streamlit..</p>
+      <p>Applied deep learning to X-ray image analysis to study fracture detection, producing confidence-scored predictions and downloadable medical-style reports through an accessible web interface.</p>
     </div>
 
   </div>
@@ -257,75 +374,116 @@ I also completed a 1-month industrial internship at India Glycols Limited. I am 
 </section>
 
 <section id="certifications">
-  <h2>Certifications & Achievements</h2>
+  <h2>Certifications &amp; Training</h2>
   <div class="projects">
 
-   <div class="project">
+    <div class="project">
       <h4>Workshop</h4>
-      <div class="year">Isuued on-  Aug 2025 | Discovery Boulevard</div>
+      <div class="year">Issued on – Aug 2025 | Discovery Boulevard</div>
       <div><a href="Molecular Docking Certificate.jpeg">View credential</a></div>
     </div>
 
     <div class="project">
-      <h4>Deloitte-Data Analytics Job Simulation</h4>
-      <div class="year">Isuued on-  Apr 2025 | Forage</div>
+      <h4>Deloitte – Data Analytics Job Simulation</h4>
+      <div class="year">Issued on – Apr 2025 | Forage</div>
       <div><a href="Deloitte Data Analytics Job Simulation Certificate.pdf">View credential</a></div>
     </div>
 
     <div class="project">
-      <h4>Pfizer-Molecule to Market Job Simulation</h4>
-      <div class="year">Isuued on-  Apr 2025 | Forage</div>
+      <h4>Pfizer – Molecule to Market Job Simulation</h4>
+      <div class="year">Issued on – Apr 2025 | Forage</div>
       <div><a href="Pfizer Molecular to Market Job Simulation Certificate.pdf">View credential</a></div>
     </div>
 
     <div class="project">
-      <h4>Html Language</h4>
-      <div class="year">Isuued on-  Dec 2024 | Infosys Springboard</div>
+      <h4>HTML Language</h4>
+      <div class="year">Issued on – Dec 2024 | Infosys Springboard</div>
       <div><a href="Intro-Html-certifi.pdf">View credential</a></div>
     </div>
 
-      <div class="project">
+    <div class="project">
       <h4>Certified Biotech Sector Financial Modeling</h4>
-      <div class="year">Isuued on-  Nov 2024 | Infosys Springboard</div>
+      <div class="year">Issued on – Nov 2024 | Infosys Springboard</div>
       <div><a href="Biotech-finance-certifi.pdf">View credential</a></div>
     </div>
 
-      <div class="project">
+    <div class="project">
       <h4>Internship</h4>
-      <div class="year">Isuued on-  Jul 2024 | India Glycols Limited</div>
+      <div class="year">Issued on – Jul 2024 | India Glycols Limited</div>
       <div><a href="IGL certificate.jpeg">View credential</a></div>
     </div>
 
-     <div class="project">
+    <div class="project">
       <h4>Personality Development Skill</h4>
-      <div class="year">Isuued on-  Jan 2024 | SGBS Unatti Foundation</div>
+      <div class="year">Issued on – Jan 2024 | SGBS Unatti Foundation</div>
       <div><a href="#">View credential</a></div>
     </div>
 
     <div class="project">
       <h4>Internship</h4>
-      <div class="year">Isuued on-  Dec 2023 | Internshala</div>
+      <div class="year">Issued on – Dec 2023 | Internshala</div>
       <div><a href="Environmental Sciences Internship_internship_certificate-1.pdf">View credential</a></div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact Me</h2>
-  <p style="text-align:center;max-width:700px;margin:0 auto 20px;color:#cbd5f5">
-    Directly Contact...
-  </p>
+<section id="awards">
+  <h2>Awards &amp; Scholarships</h2>
+  <p class="section-sub">This section will grow as I earn academic honors and scholarships during my M.Sc and beyond — check back as my research and academic journey progresses.</p>
+</section>
 
-  <div style="text-align:center;font-size:1.05rem;color:#e5e7eb;margin-bottom:20px">
-    📧 <strong>researcher.shubham@gmail.com</strong>
+<section id="contact">
+  <h2>Let's Connect</h2>
+  <p class="section-sub">Open to research collaborations, academic opportunities, and mentoring conversations — feel free to reach out through any of these.</p>
+
+  <div class="contact-grid reveal">
+
+    <a class="contact-card" href="mailto:researcher.shubham@gmail.com">
+      <div class="contact-icon">
+        <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/envelope-fill.svg" alt="Email" />
+      </div>
+      <div class="contact-text">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">researcher.shubham@gmail.com</span>
+      </div>
+    </a>
+
+    <a class="contact-card" href="https://www.linkedin.com/in/shubham-maddhesiya/" target="_blank">
+      <div class="contact-icon">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+      </div>
+      <div class="contact-text">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value">shubham-maddhesiya</span>
+      </div>
+    </a>
+
+    <a class="contact-card" href="https://github.com/shubham-bioai" target="_blank">
+      <div class="contact-icon">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+      </div>
+      <div class="contact-text">
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value">shubham-bioai</span>
+      </div>
+    </a>
+
+    <a class="contact-card" href="https://orcid.org/0009-0007-7540-5044" target="_blank">
+      <div class="contact-icon">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/orcid.svg" alt="ORCID" />
+      </div>
+      <div class="contact-text">
+        <span class="contact-label">ORCID</span>
+        <span class="contact-value">0009-0007-7540-5044</span>
+      </div>
+    </a>
+
   </div>
 
-  <div class="social-icons">
-    <a href="https://www.linkedin.com/in/shubham-maddhesiya/" target="_blank" title="LinkedIn">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
-    </a>
-    <a href="https://github.com/shubham-bioai" target="_blank" title="GitHub">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+  <div class="hero-btns" style="margin-top:36px">
+    <a class="btn" href="mailto:researcher.shubham@gmail.com">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Send a Message
     </a>
   </div>
 </section>
@@ -334,6 +492,8 @@ I also completed a 1-month industrial internship at India Glycols Limited. I am 
   <p>© 2026 Shubham Maddhesiya</p>
 </footer>
 
+<button class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
 function toggleMenu(){
   const nav=document.getElementById('navLinks');
@@ -341,12 +501,38 @@ function toggleMenu(){
   nav.classList.toggle('active');
   burger.classList.toggle('active');
 }
+
+window.addEventListener('scroll',()=>{
+  const btn=document.getElementById('topBtn');
+  if(window.scrollY>400){btn.classList.add('show');}
+  else{btn.classList.remove('show');}
+});
+
+/* Scroll-reveal: fade + rise content blocks into view */
+document.querySelectorAll('.timeline, .stats, .projects, .skills, .contact-grid').forEach(el=>el.classList.add('reveal'));
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+/* Confirm nav navigation landed on the right section with a brief glow pulse */
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+  link.addEventListener('click', ()=>{
+    const id = link.getAttribute('href');
+    const target = document.querySelector(id);
+    if(!target) return;
+    setTimeout(()=>{
+      const heading = target.querySelector('h2') || target;
+      heading.classList.add('nav-target-pulse');
+      setTimeout(()=>heading.classList.remove('nav-target-pulse'), 1000);
+    }, 550);
+  });
+});
 </script>
 </body>
 </html>
-
-
-
-
-
-
